@@ -49,13 +49,12 @@ class RubyApp < Gtk::Window
     
     def on_clicked
 
-        cdia = Gtk::ColorSelectionDialog.new :title => "Select colour"
+        cdia = Gtk::ColorChooserDialog.new :title => "Select colour"
         response = cdia.run
               
         if response == Gtk::ResponseType::OK
-        
-            colorsel = cdia.color_selection
-            col = colorsel.current_rgba
+            #colorsel = cdia.color_selection
+            col = cdia.rgba
             @label.override_color :normal, col
         end
         
