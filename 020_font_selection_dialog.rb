@@ -54,10 +54,8 @@ class RubyApp < Gtk::Window
         response = fdia.run
                       
         if response == Gtk::ResponseType::OK
- 
-            font_desc = Pango::FontDescription.new fdia.font_desc
+            font_desc = Pango::FontDescription.new fdia.font_desc.to_s
             if font_desc
-
                 @label.override_font font_desc
             end
         end

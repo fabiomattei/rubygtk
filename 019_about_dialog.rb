@@ -57,7 +57,7 @@ class RubyApp < Gtk::Window
         about.set_website "http://www.zetcode.com"        
               
         begin       
-            logo = Gdk::Pixbuf.new :file => "batter.png"
+            logo = Gdk::Pixbuf.new :file => "images/battery.png"
             about.set_logo logo
         rescue IOError => e
             puts e
