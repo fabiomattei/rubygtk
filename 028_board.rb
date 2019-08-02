@@ -50,9 +50,9 @@ class Board < Gtk::DrawingArea
         end
         
         begin
-            @dot = Cairo::ImageSurface.from_png "dot.png"
-            @head = Cairo::ImageSurface.from_png "head.png"
-            @apple = Cairo::ImageSurface.from_png "apple.png"
+            @dot = Cairo::ImageSurface.from_png "images/img3/dot.png"
+            @head = Cairo::ImageSurface.from_png "images/img3/head.png"
+            @apple = Cairo::ImageSurface.from_png "images/img3/apple.png"
         rescue Exception => e
             puts "cannot load images"
             exit
@@ -183,25 +183,25 @@ class Board < Gtk::DrawingArea
     
         key = event.keyval
 
-        if key == Gdk::Keyval::GDK_KEY_Left and not @right
+        if key == Gdk::Keyval::KEY_Left and not @right
             @left = true
             @up = false
             @down = false
         end
 
-        if key == Gdk::Keyval::GDK_KEY_Right and not @left
+        if key == Gdk::Keyval::KEY_Right and not @left
             @right = true
             @up = false
             @down = false
         end
 
-        if key == Gdk::Keyval::GDK_KEY_Up and not @down
+        if key == Gdk::Keyval::KEY_Up and not @down
             @up = true
             @right = false
             @left = false
         end
 
-        if key == Gdk::Keyval::GDK_KEY_Down and not @up
+        if key == Gdk::Keyval::KEY_Down and not @up
             @down = true
             @right = false
             @left = false
